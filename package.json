@@ -16,8 +16,8 @@
     "docs:dev": "npm run start -w docs",
     "docs:build": "npm run build -w docs",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build",
-    "build-storybook": "storybook build"
+    "storybook:build": "storybook build -o docs/static/storybook",
+    "docs:build": "npm run storybook:build && npm run build -w docs"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",
