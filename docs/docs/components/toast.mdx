@@ -1,0 +1,70 @@
+---
+sidebar_position: 14
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Toast
+
+A succinct message that is displayed temporarily.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Toast" />
+
+## Usage
+
+```tsx
+import { Toaster, toast } from '@emmettorama/substance';
+```
+
+Add `<Toaster />` to your app root:
+
+```tsx
+function App() {
+  return (
+    <>
+      <YourApp />
+      <Toaster />
+    </>
+  );
+}
+```
+
+Then trigger toasts:
+
+```tsx
+toast({
+  title: 'Scheduled: Catch up',
+  description: 'Friday, February 10, 2024 at 5:57 PM',
+});
+```
+
+## Destructive Toast
+
+```tsx
+toast({
+  variant: 'destructive',
+  title: 'Uh oh! Something went wrong.',
+  description: 'There was a problem with your request.',
+});
+```
+
+## With Action
+
+```tsx
+toast({
+  title: 'File deleted',
+  description: 'The file has been permanently deleted.',
+  action: <ToastAction altText="Undo">Undo</ToastAction>,
+});
+```
+
+## API
+
+### toast()
+
+| Param | Type | Default | Description |
+|-------|------|---------|-------------|
+| `title` | `ReactNode` | — | Toast title |
+| `description` | `ReactNode` | — | Toast description |
+| `variant` | `"default" \| "destructive"` | `"default"` | Visual style |
+| `action` | `ToastActionElement` | — | Action button |

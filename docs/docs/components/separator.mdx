@@ -1,0 +1,43 @@
+---
+sidebar_position: 10
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Separator
+
+Visually or semantically separates content.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Separator" />
+
+## Usage
+
+```tsx
+import { Separator } from '@emmettorama/substance';
+```
+
+```tsx
+<div>
+  <div>Content above</div>
+  <Separator />
+  <div>Content below</div>
+</div>
+```
+
+## Vertical
+
+```tsx
+<div className="flex h-5 items-center space-x-4">
+  <div>Left</div>
+  <Separator orientation="vertical" />
+  <div>Right</div>
+</div>
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` | Orientation |
+| `decorative` | `boolean` | `true` | Whether purely decorative |
+| `className` | `string` | — | Additional CSS classes |

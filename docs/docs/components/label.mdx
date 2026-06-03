@@ -1,0 +1,29 @@
+---
+sidebar_position: 8
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Label
+
+Renders an accessible label associated with a form control.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Label" />
+
+## Usage
+
+```tsx
+import { Label } from '@emmettorama/substance';
+```
+
+```tsx
+<Label htmlFor="email">Your email address</Label>
+<Input id="email" type="email" />
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `htmlFor` | `string` | — | ID of the associated form control |
+| `className` | `string` | — | Additional CSS classes |

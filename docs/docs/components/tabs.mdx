@@ -1,0 +1,55 @@
+---
+sidebar_position: 12
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Tabs
+
+A set of layered sections of content — known as tab panels — that are displayed one at a time.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Tabs" />
+
+## Usage
+
+```tsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@emmettorama/substance';
+```
+
+```tsx
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">
+    Account settings content here.
+  </TabsContent>
+  <TabsContent value="password">
+    Password change form here.
+  </TabsContent>
+</Tabs>
+```
+
+## API
+
+### Tabs
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Controlled active tab |
+| `defaultValue` | `string` | — | Uncontrolled active tab |
+| `onValueChange` | `(value: string) => void` | — | Change handler |
+
+### TabsTrigger
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Tab value |
+| `disabled` | `boolean` | `false` | Disabled state |
+
+### TabsContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | — | Content value (matches trigger) |

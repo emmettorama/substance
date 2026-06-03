@@ -1,0 +1,55 @@
+---
+sidebar_position: 15
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Tooltip
+
+A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Tooltip" />
+
+## Usage
+
+```tsx
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '@emmettorama/substance';
+```
+
+Wrap your app (or a section) with `TooltipProvider`:
+
+```tsx
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Hover me</Button>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p>Add to library</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+```
+
+## API
+
+### TooltipProvider
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `delayDuration` | `number` | `700` | Delay before showing (ms) |
+| `skipDelayDuration` | `number` | `300` | Delay when switching (ms) |
+| `disableHoverableContent` | `boolean` | — | Disable hover on content |
+
+### TooltipContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `sideOffset` | `number` | `4` | Offset from trigger |
+| `side` | `"top" \| "right" \| "bottom" \| "left"` | `"top"` | Preferred side |
+| `align` | `"start" \| "center" \| "end"` | `"center"` | Preferred alignment |

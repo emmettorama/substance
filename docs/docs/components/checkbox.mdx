@@ -1,0 +1,41 @@
+---
+sidebar_position: 4
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Checkbox
+
+A control that allows the user to toggle between checked and not checked.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Checkbox" />
+
+## Usage
+
+```tsx
+import { Checkbox } from '@emmettorama/substance';
+```
+
+```tsx
+<Checkbox checked={checked} onCheckedChange={setChecked} />
+```
+
+## With Label
+
+```tsx
+<div className="flex items-center space-x-2">
+  <Checkbox id="terms" />
+  <Label htmlFor="terms">Accept terms and conditions</Label>
+</div>
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `checked` | `boolean \| "indeterminate"` | — | Controlled checked state |
+| `defaultChecked` | `boolean` | — | Uncontrolled checked state |
+| `onCheckedChange` | `(checked: boolean \| "indeterminate") => void` | — | Change handler |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `required` | `boolean` | `false` | Required state |
+| `className` | `string` | — | Additional CSS classes |

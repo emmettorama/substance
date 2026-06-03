@@ -1,0 +1,57 @@
+---
+sidebar_position: 1
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Button
+
+Displays a button or a component that looks like a button.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Button" />
+
+## Usage
+
+```tsx
+import { Button } from '@emmettorama/substance';
+```
+
+```tsx
+<Button variant="default">Default</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>
+```
+
+## Sizes
+
+```tsx
+<Button size="sm">Small</Button>
+<Button size="default">Default</Button>
+<Button size="lg">Large</Button>
+<Button size="icon">
+  <SomeIcon />
+</Button>
+```
+
+## As Child
+
+Use the `asChild` prop to render a link that looks like a button:
+
+```tsx
+<Button asChild>
+  <a href="/dashboard">Dashboard</a>
+</Button>
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` | Visual style |
+| `size` | `"default" \| "sm" \| "lg" \| "icon"` | `"default"` | Size |
+| `asChild` | `boolean` | `false` | Merge props onto child |
+| `disabled` | `boolean` | `false` | Disabled state |
+| `className` | `string` | — | Additional CSS classes |

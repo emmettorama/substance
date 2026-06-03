@@ -1,0 +1,31 @@
+---
+sidebar_position: 2
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Badge
+
+Displays a badge or a component that looks like a badge.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Badge" />
+
+## Usage
+
+```tsx
+import { Badge } from '@emmettorama/substance';
+```
+
+```tsx
+<Badge variant="default">Default</Badge>
+<Badge variant="secondary">Secondary</Badge>
+<Badge variant="destructive">Destructive</Badge>
+<Badge variant="outline">Outline</Badge>
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "secondary" \| "destructive" \| "outline"` | `"default"` | Visual style |
+| `className` | `string` | — | Additional CSS classes |

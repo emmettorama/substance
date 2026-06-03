@@ -1,0 +1,46 @@
+---
+sidebar_position: 3
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Avatar
+
+An image element with a fallback for representing the user.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Avatar" />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarImage, AvatarFallback } from '@emmettorama/substance';
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```
+
+## API
+
+### Avatar
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional CSS classes |
+
+### AvatarImage
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `src` | `string` | — | Image source URL |
+| `alt` | `string` | — | Alt text |
+| `className` | `string` | — | Additional CSS classes |
+
+### AvatarFallback
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | — | Additional CSS classes |

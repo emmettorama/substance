@@ -1,0 +1,52 @@
+---
+sidebar_position: 5
+---
+
+import FigmaEmbed from '@site/src/components/FigmaEmbed';
+
+# Dialog
+
+A modal window that appears in front of app content to provide critical information or prompt a decision.
+
+<FigmaEmbed url="https://www.figma.com/file/YOUR_FILE_ID/Dialog" />
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@emmettorama/substance';
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger asChild>
+    <Button variant="outline">Open Dialog</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account.
+      </DialogDescription>
+    </DialogHeader>
+    <DialogFooter>
+      <Button variant="outline">Cancel</Button>
+      <Button variant="destructive">Delete</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>
+```
+
+## API
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `open` | `boolean` | — | Controlled open state |
+| `defaultOpen` | `boolean` | — | Uncontrolled open state |
+| `onOpenChange` | `(open: boolean) => void` | — | Change handler |

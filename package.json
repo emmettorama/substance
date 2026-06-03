@@ -1,0 +1,29 @@
+{
+  "name": "substance",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "docs"
+  ],
+  "overrides": {
+    "webpack": "5.95.0"
+  },
+  "scripts": {
+    "build": "npm run build -w packages/substance",
+    "dev": "npm run dev -w packages/substance",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "docs:dev": "npm run start -w docs",
+    "docs:build": "npm run build -w docs",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^5.2.1",
+    "@storybook/addon-a11y": "^10.4.2",
+    "@storybook/addon-docs": "^10.4.2",
+    "@storybook/react-vite": "^10.4.2",
+    "storybook": "^10.4.2"
+  }
+}
