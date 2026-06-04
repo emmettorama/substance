@@ -6,7 +6,9 @@ interface StorybookEmbedProps {
 }
 
 export default function StorybookEmbed({ storyId, height = 500 }: StorybookEmbedProps) {
-  const src = `/substance/storybook/iframe.html?id=${encodeURIComponent(storyId)}`;
+  // Storybook 10 iframe.html has known issues with viewMode detection.
+  // Using index.html with path-based routing is more reliable for embeds.
+  const src = `/substance/storybook/index.html?path=/story/${encodeURIComponent(storyId)}`;
   return (
     <iframe
       src={src}
