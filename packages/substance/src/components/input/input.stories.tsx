@@ -5,7 +5,7 @@ import { Label } from "../label";
 const meta: Meta<typeof Input> = {
   title: "Components/Input",
   component: Input,
-  tags: ["autodocs"],
+  
 };
 
 export default meta;

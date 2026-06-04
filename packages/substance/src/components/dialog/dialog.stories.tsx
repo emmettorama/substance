@@ -13,7 +13,7 @@ import { Button } from "../button";
 const meta: Meta<typeof Dialog> = {
   title: "Components/Dialog",
   component: Dialog,
-  tags: ["autodocs"],
+  
 };
 
 export default meta;

@@ -7,7 +7,7 @@ import { ToastAction } from "./toast";
 const meta: Meta<typeof Toaster> = {
   title: "Components/Toast",
   component: Toaster,
-  tags: ["autodocs"],
+  
 };
 
 export default meta;

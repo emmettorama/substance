@@ -14,7 +14,7 @@ import { Input } from "../input";
 const meta: Meta<typeof Sheet> = {
   title: "Components/Sheet",
   component: Sheet,
-  tags: ["autodocs"],
+  
 };
 
 export default meta;
