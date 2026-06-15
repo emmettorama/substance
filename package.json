@@ -14,7 +14,6 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "docs:dev": "npm run start -w docs",
-    "docs:build": "npm run build -w docs",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build -o docs/static/storybook",
     "docs:build": "npm run storybook:build && npm run build -w docs"

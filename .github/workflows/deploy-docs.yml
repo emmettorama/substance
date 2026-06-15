@@ -1,0 +1,50 @@
+name: Deploy Docs to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'packages/substance/src/**'
+      - '.storybook/**'
+      - 'package.json'
+      - '.github/workflows/deploy-docs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - run: npm ci
+
+      # Build the component library first (needed by Storybook)
+      - run: npm run build -w packages/substance
+
+      # Build Storybook into docs/static/storybook
+      - run: npx storybook build -o docs/static/storybook --disable-telemetry
+
+      # Build Docusaurus
+      - run: npm run build -w docs
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/build
+
+      - uses: actions/deploy-pages@v4
+        name: Deploy to GitHub Pages
