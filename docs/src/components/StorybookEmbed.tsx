@@ -6,9 +6,9 @@ interface StorybookEmbedProps {
 }
 
 export default function StorybookEmbed({ storyId, height = 500 }: StorybookEmbedProps) {
-  // Storybook 10 iframe.html has known issues with viewMode detection.
-  // Using index.html with path-based routing is more reliable for embeds.
-  const src = `/substance/storybook/index.html?path=/story/${encodeURIComponent(storyId)}`;
+  // iframe.html is Storybook's official embed target — strips chrome, shows story only.
+  // viewMode=story ensures we get the interactive story, not the Docs page.
+  const src = `/substance/storybook/iframe.html?id=${encodeURIComponent(storyId)}&viewMode=story`;
   return (
     <iframe
       src={src}
